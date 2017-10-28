@@ -1,0 +1,41 @@
+cc_library_shared {
+    name: "libstagefright_xmlparser",
+    vendor_available: true,
+
+    srcs: [
+        "MediaCodecsXmlParser.cpp",
+    ],
+
+    include_dirs: [
+        "frameworks/av/media/libstagefright",
+        "frameworks/av/include",
+    ],
+
+    export_include_dirs: [
+        "include",
+    ],
+
+    shared_libs: [
+        "libexpat",
+        "libutils",
+        "liblog",
+        "libcutils",
+        "libstagefright_foundation",
+    ],
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+    ],
+
+    clang: true,
+
+    sanitize: {
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+    },
+
+}
+

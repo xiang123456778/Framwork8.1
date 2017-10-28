@@ -1,0 +1,26 @@
+apply plugin: android.support.SupportLibraryPlugin
+
+dependencies {
+    api project(':support-compat')
+    api project(':support-core-ui')
+
+    androidTestImplementation libs.test_runner,   { exclude module: 'support-annotations' }
+    androidTestImplementation libs.espresso_core, { exclude module: 'support-annotations' }
+}
+
+android {
+    defaultConfig {
+        minSdkVersion 14
+    }
+
+    sourceSets {
+        main.java.srcDir 'src'
+        main.res.srcDir 'res'
+    }
+}
+
+supportLibrary {
+    name 'Android Support Grid Layout'
+    inceptionYear '2013'
+    description 'Android Support Grid Layout'
+}

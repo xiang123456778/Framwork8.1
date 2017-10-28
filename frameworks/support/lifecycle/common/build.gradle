@@ -1,0 +1,15 @@
+import android.support.LibraryVersions
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.7
+
+dependencies {
+    testCompile libs.junit
+    testCompile libs.mockito_core
+    compile libs.support.annotations
+}
+
+createAndroidCheckstyle(project)
+version = LibraryVersions.LIFECYCLES.toString()

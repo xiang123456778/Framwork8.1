@@ -1,0 +1,25 @@
+apply plugin: android.support.SupportLibraryPlugin
+
+dependencies {
+    api project(':support-annotations')
+    api project(':support-compat')
+
+    androidTestImplementation libs.test_runner, { exclude module: 'support-annotations' }
+}
+
+android {
+    defaultConfig {
+        minSdkVersion 21
+    }
+
+    sourceSets {
+        main.java.srcDirs = ['src']
+        main.res.srcDir 'res'
+    }
+}
+
+supportLibrary {
+    name 'Android Support TV Provider'
+    inceptionYear '2017'
+    description 'Android Support Library for TV Provider'
+}

@@ -1,0 +1,23 @@
+apply plugin: android.support.SupportLibraryPlugin
+
+dependencies {
+    api project(':support-annotations')
+}
+
+android {
+    defaultConfig {
+        minSdkVersion 21
+    }
+
+    sourceSets {
+        main.java.srcDirs = ['src']
+        main.res.srcDir 'res'
+    }
+
+}
+
+supportLibrary {
+    name 'Android Support Recommendation'
+    inceptionYear '2015'
+    description 'Android Support Recommendation'
+}

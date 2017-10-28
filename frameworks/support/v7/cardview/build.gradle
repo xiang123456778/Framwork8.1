@@ -1,0 +1,24 @@
+apply plugin: android.support.SupportLibraryPlugin
+
+dependencies {
+    api project(':support-annotations')
+}
+
+android {
+    defaultConfig {
+        minSdkVersion 14
+    }
+
+    sourceSets {
+        main.java.srcDirs = [
+                'src'
+        ]
+        main.res.srcDir 'res'
+    }
+}
+
+supportLibrary {
+    name 'Android Support CardView v7'
+    inceptionYear '2011'
+    description 'Android Support CardView v7'
+}
